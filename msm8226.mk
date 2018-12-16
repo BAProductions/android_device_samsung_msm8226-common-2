@@ -39,27 +39,14 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.primary.msm8226 \
     audio.r_submix.default \
-    audio.usb.default \
+    audio.usb.default
+
+PRODUCT_PACKAGES += \
     libaudio-resampler \
-    libqcomvisualizer \
     libqcompostprocbundle \
+    libqcomvisualizer \
     libqcomvoiceprocessing \
     tinymix
-
-# Audio
-PRODUCT_PACKAGES += \
-    audiod \
-audio.a2dp.default \
-audio.primary.msm8226 \
-audio.r_submix.default \
-audio.usb.default
-
-PRODUCT_PACKAGES += \
-libaudio-resampler \
-libqcompostprocbundle \
-libqcomvisualizer \
-libqcomvoiceprocessing \
-tinymix
 
 # Display
 PRODUCT_PACKAGES += \
