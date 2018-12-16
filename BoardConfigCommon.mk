@@ -18,10 +18,5 @@
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 
-# Charger
-BOARD_BATTERY_DEVICE_NAME := "battery"
-BOARD_CHARGING_CMDLINE_NAME := "androidboot.bootchg"
-BOARD_CHARGING_CMDLINE_VALUE := "true"
-
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
