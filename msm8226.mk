@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+LOCAL_PATH := device/samsung/msm8226-common
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/samsung/msm8226-common/overlay
 
@@ -89,22 +91,22 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/msm8226-common/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    device/samsung/msm8226-common/keylayout/cyttsp-i2c.kl:system/usr/keylayout/cyttsp-i2c.kl \
-    device/samsung/msm8226-common/keylayout/keypad_8960.kl:system/usr/keylayout/keypad_8960.kl \
-    device/samsung/msm8226-common/keylayout/Vendor_04e8_Product_7021.kl:system/usr/keylayout/Vendor_04e8_Product_7021.kl
+    $(LOCAL_PATH)/keylayout/cyttsp-i2c.kl:system/usr/keylayout/cyttsp-i2c.kl \
+    $(LOCAL_PATH)/keylayout/keypad_8960.kl:system/usr/keylayout/keypad_8960.kl \
+    $(LOCAL_PATH)/keylayout/Vendor_04e8_Product_7021.kl:system/usr/keylayout/Vendor_04e8_Product_7021.kl
 
 # Media
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml  \
-    device/samsung/msm8226-common/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    device/samsung/msm8226-common/media_profiles.xml:system/etc/media_profiles.xml \
-    device/samsung/msm8226-common/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
+    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -147,7 +149,7 @@ PRODUCT_PACKAGES += \
 
 # ADB
 PRODUCT_COPY_FILES += \
-    device/samsung/msm8226-common/configs/adbkey.pub:root/adb_keys
+    $(LOCAL_PATH)/configs/adbkey.pub:root/adb_keys
 
 # set default USB configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
