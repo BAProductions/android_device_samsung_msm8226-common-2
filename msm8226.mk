@@ -48,12 +48,48 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     tinymix
 
+# Audio configuration
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
+
+# Audio configuration
+#PRODUCT_COPY_FILES += \
+#     $(LOCAL_PATH)/configs/audio_effects.conf:system/vendor/etc/audio_effects.conf
+
+PRODUCT_PACKAGES += \
+    libwvm_shim \
+    imx175_shim
+
+# Camera
+PRODUCT_PACKAGES += \
+    camera.vendor.msm8226 \
+    camera.msm8226 \
+    libboringssl-compat \
+    libstlport \
+    libxml2 \
+    Snap
+
+# Input device
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/idc/sec_e-pen.idc:system/usr/idc/sec_e-pen.idc \
+	$(LOCAL_PATH)/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc \
+	$(LOCAL_PATH)/idc/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc \
+	$(LOCAL_PATH)/idc/Synaptics_RMI4_TouchPad_Sensor.idc:system/usr/idc/Synaptics_RMI4_TouchPad_Sensor.idc
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8226 \
     gralloc.msm8226 \
     hwcomposer.msm8226 \
     memtrack.msm8226
+
+#GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
+
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/msm8226-common/bluetooth
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -67,6 +103,8 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml  \
     device/samsung/msm8226-common/configs/media_codecs.xml:system/etc/media_codecs.xml
+    device/samsung/msm8226-common/media_profiles.xml:system/etc/media_profiles.xml \
+    device/samsung/msm8226-common/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
 
 # OMX
 PRODUCT_PACKAGES += \
