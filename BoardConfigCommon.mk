@@ -30,7 +30,7 @@ BOARD_HARDWARE_CLASS += $(LOCAL_PATH)/cmhw
 
 #TODO: Check
 # Custom RIL class
-#BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
+BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
 
 # QCOM Hardware
 BOARD_USES_QCOM_HARDWARE := true
@@ -40,7 +40,7 @@ EXTENDED_FONT_FOOTPRINT := true
 
 #TODO: Check
 # Properties (reset them here, include more in device if needed)
-#TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
+TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
