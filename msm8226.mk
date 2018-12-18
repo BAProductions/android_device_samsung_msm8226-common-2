@@ -152,9 +152,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/adbkey.pub:root/adb_keys
 
-# set default USB configuration
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=adb
-
 # common msm8226
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
