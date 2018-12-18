@@ -1,8 +1,10 @@
 # Default.prop overrides to get adb working at boot
+ifneq ($(TARGET_BUILD_VARIANT),user)
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.adb.secure=0 \
     persist.sys.usb.config=mtp
+endif
 
 # Android Run Time
 ADDITIONAL_DEFAULT_PROPERTIES += \
