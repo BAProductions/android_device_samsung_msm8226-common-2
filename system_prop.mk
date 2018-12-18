@@ -1,11 +1,3 @@
-# Default.prop overrides to get adb working at boot
-ifneq ($(TARGET_BUILD_VARIANT),user)
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.secure=0 \
-    ro.adb.secure=0 \
-    persist.sys.usb.config=mtp
-endif
-
 # Android Run Time
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.sys.fw.dex2oat_thread_count=4 \
@@ -113,10 +105,9 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     wifi.interface=wlan0
 
 # Default.prop overrides to get adb working at boot
-ifneq ($(TARGET_BUILD_VARIANT),user)
 # ADB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.service.adb.enable=1
-    persist.service.debuggable=1
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    sys.usb.config=mtp,adb \
     persist.sys.usb.config=mtp,adb
-endif
