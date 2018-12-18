@@ -112,8 +112,11 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.disableWifiApFirmwareReload=true \
     wifi.interface=wlan0
 
+# Default.prop overrides to get adb working at boot
+ifneq ($(TARGET_BUILD_VARIANT),user)
 # ADB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.service.adb.enable=1
     persist.service.debuggable=1
     persist.sys.usb.config=mtp,adb
+endif
